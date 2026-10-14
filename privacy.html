@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика обработки персональных данных — Рифкат Муравлев</title>
+  <meta name="description" content="Какие персональные данные собирает форма на сайте Рифката Муравлева, зачем и как они обрабатываются.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="canonical" href="https://murrif.ru/privacy.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316161c'/%3E%3Cpath d='M20 24l-8 8 8 8M44 24l8 8-8 8M36 18l-8 28' stroke='%23b9bafc' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    /* Шрифты: Onest и JetBrains Mono (лицензия SIL OFL 1.1, см. fonts/OFL-*.txt) */
+    @font-face {
+      font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap;
+      src: url("fonts/jetbrains-mono-cyrillic.woff2") format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    @font-face {
+      font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap;
+      src: url("fonts/jetbrains-mono-latin.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: "Onest"; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url("fonts/onest-cyrillic.woff2") format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    @font-face {
+      font-family: "Onest"; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url("fonts/onest-latin.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    :root {
+      color-scheme: dark;
+      --bg: #08080a;
+      --surface: #111116;
+      --line: rgba(255, 255, 255, .08);
+      --line-strong: rgba(255, 255, 255, .14);
+      --ink: #f4f4f5;
+      --ink-body: #c9c9d1;
+      --ink-soft: #a1a1aa;
+      --ink-muted: #8b8b95;
+      --accent: #8b8cf6;
+      --accent-2: #b9bafc;
+      --accent-soft: rgba(139, 140, 246, .12);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --font: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; }
+    body {
+      margin: 0; font-family: var(--font); font-size: 17px; line-height: 1.7;
+      color: var(--ink-body); background: var(--bg);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden; overflow-x: clip;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2 { color: var(--ink); margin: 0; letter-spacing: -0.02em; font-weight: 600; line-height: 1.2; }
+    p { margin: 0; }
+    strong { color: var(--ink); font-weight: 600; }
+    ::selection { background: rgba(139, 140, 246, .28); color: #fff; }
+    :focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 8px; }
+
+    .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 200; background: var(--ink); color: var(--bg); padding: 10px 14px; border-radius: 8px; font-weight: 600; }
+    .skip-link:focus { left: 8px; }
+
+    /* Шапка — как на главной */
+    .header { position: sticky; top: 0; z-index: 100; padding: 12px 20px 0; }
+    .header__inner {
+      max-width: 1140px; margin: 0 auto; height: 60px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 0 10px 0 14px;
+      background: rgba(17, 17, 22, .86); border: 1px solid var(--line-strong); border-radius: 16px;
+      backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px);
+      box-shadow: 0 12px 32px -16px rgba(0, 0, 0, .8);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; min-height: 44px; min-width: 0; text-decoration: none; color: var(--ink); }
+    .logo__mark {
+      width: 34px; height: 34px; flex: none; border-radius: 10px; display: grid; place-items: center;
+      background: var(--accent-soft); border: 1px solid rgba(139, 140, 246, .35); color: var(--accent-2);
+      font-family: var(--mono); font-size: 13px; font-weight: 600;
+    }
+    .logo__avatar { display: none; flex: none; width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(139, 140, 246, .35); }
+    .logo__text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+    .logo__name { font-size: 15px; font-weight: 600; white-space: nowrap; }
+    .logo__role { font-size: 12px; color: var(--ink-muted); }
+    .header__back {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 0 14px; flex: none;
+      border-radius: 10px; text-decoration: none; font-size: 14.5px; font-weight: 500; color: var(--ink-soft);
+      transition: color .2s ease, background-color .2s ease;
+    }
+    .header__back:hover { color: var(--ink); background: rgba(255, 255, 255, .05); }
+
+    /* Документ */
+    .doc { position: relative; padding: 64px 20px 96px; }
+    .doc::before {
+      content: ""; position: absolute; left: 50%; top: -260px; width: 900px; max-width: 100%; height: 520px; transform: translateX(-50%); pointer-events: none;
+      background: radial-gradient(closest-side, rgba(124, 127, 242, .12), transparent);
+    }
+    .doc__wrap { position: relative; max-width: 720px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px;
+      font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2);
+    }
+    .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+    .doc h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -0.035em; line-height: 1.12; }
+    .doc__meta { margin-top: 14px; font-family: var(--mono); font-size: 13px; color: var(--ink-muted); }
+    .doc__lead { margin-top: 28px; font-size: 18px; color: var(--ink); }
+
+    .doc section { margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .doc h2 { display: flex; align-items: baseline; gap: 14px; font-size: clamp(21px, 3vw, 24px); }
+    .doc h2 .num { flex: none; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-2); }
+    .doc section > p, .doc section > ul, .doc section > dl { margin-top: 14px; }
+    .doc ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .doc ul li { position: relative; padding-left: 22px; }
+    .doc ul li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .doc a { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(185, 186, 252, .4); overflow-wrap: anywhere; }
+    .doc a:hover { color: #fff; text-decoration-color: #fff; }
+
+    .card {
+      margin-top: 16px; padding: 20px 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .012));
+      border: 1px solid var(--line); border-radius: var(--radius);
+    }
+    .card dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; }
+    .card dt { font-family: var(--mono); font-size: 13px; color: var(--ink-muted); padding-top: 3px; }
+    .card dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+
+    /* Подвал */
+    .footer { border-top: 1px solid var(--line); padding: 20px; font-size: 14px; color: var(--ink-muted); }
+    .footer__inner { max-width: 1140px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 24px; }
+    .footer__links { display: flex; flex-wrap: wrap; gap: 0 24px; }
+    .footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink-soft); text-decoration: none; }
+    .footer a:hover, .footer a[aria-current] { color: var(--ink); }
+
+    @media (max-width: 860px) {
+      .logo__role { display: none; }
+    }
+    @media (max-width: 767px) {
+      .logo__mark { display: none; }
+      .logo__avatar { display: block; }
+    }
+    @media (max-width: 680px) {
+      body { font-size: 16px; }
+      .header { padding: 10px 12px 0; }
+      .doc { padding: 40px 20px 72px; }
+      .doc__lead { font-size: 17px; }
+      .doc section { margin-top: 36px; padding-top: 26px; }
+      .card { padding: 18px; }
+      .card dl { grid-template-columns: 1fr; gap: 2px; }
+      .card dd + dt { margin-top: 10px; }
+    }
+    @media (max-width: 360px) {
+      .header__back span { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="Рифкат Муравлев — на главную">
+        <span class="logo__mark" aria-hidden="true">РМ</span>
+        <img class="logo__avatar" src="photo-square.webp" alt="" width="36" height="36" loading="lazy">
+        <span class="logo__text">
+          <span class="logo__name">Рифкат Муравлев</span>
+          <span class="logo__role">Сайты и приложения для бизнеса</span>
+        </span>
+      </a>
+      <a class="header__back" href="index.html">← <span>На главную</span></a>
+    </div>
+  </header>
+
+  <main class="doc" id="main">
+    <div class="doc__wrap">
+      <span class="eyebrow">Персональные данные</span>
+      <h1>Политика обработки персональных данных</h1>
+      <p class="doc__meta">Опубликовано: 14.10.2026</p>
+      <p class="doc__lead">Здесь простыми словами описано, какие данные вы сообщаете через форму на сайте, зачем они мне нужны и как я с ними обращаюсь. Политика составлена по Федеральному закону от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+
+      <section>
+        <h2><span class="num">01</span>Кто обрабатывает данные</h2>
+        <p>Ваши данные обрабатываю я — оператор персональных данных.</p>
+        <div class="card">
+          <dl>
+            <dt>Оператор</dt><dd>Муравлев Рифкат Ринадович, плательщик налога на профессиональный доход (самозанятый)</dd>
+            <dt>ИНН</dt><dd>100122084339</dd>
+            <dt>Email</dt><dd><a href="mailto:daydrneg1974@gmail.com">daydrneg1974@gmail.com</a></dd>
+            <dt>Сайт</dt><dd><a href="https://murrif.ru">https://murrif.ru</a></dd>
+          </dl>
+        </div>
+      </section>
+      <section>
+        <h2><span class="num">02</span>Какие данные и зачем</h2>
+        <p>В форме «Оставить заявку» вы можете указать:</p>
+        <ul>
+          <li>имя или как к вам обращаться;</li>
+          <li>телефон, Telegram, email или другой способ связи;</li>
+          <li>услуга, которая вас интересует;</li>
+          <li>текст сообщения о задаче.</li>
+        </ul>
+        <p>Эти данные нужны мне, только чтобы ответить на вашу заявку, проконсультировать вас и подготовить для вас предложение.</p>
+      </section>
+      <section>
+        <h2><span class="num">03</span>Как работает форма</h2>
+        <p>Сайт не хранит ваши данные и никуда их не отправляет. Когда вы нажимаете «Отправить заявку», на вашем устройстве открывается почтовая программа с готовым письмом на мой адрес. Отправлять письмо или нет — решаете вы.</p>
+        <p>Отправленное письмо приходит на мою почту в сервисе Gmail (Google).</p>
+        <p>На сайте не используются cookie, счётчики посещений и системы аналитики.</p>
+      </section>
+      <section>
+        <h2><span class="num">04</span>На каком основании</h2>
+        <p>Я обрабатываю данные на основании вашего согласия (п. 1 ч. 1 ст. 6 152-ФЗ). Вы даёте его, когда отмечаете галочку в форме. Полный текст — на отдельной странице: <a href="consent.html">Согласие на обработку персональных данных</a>.</p>
+      </section>
+      <section>
+        <h2><span class="num">05</span>Что я делаю с данными</h2>
+        <p>С вашими данными совершаются следующие действия: сбор, запись, систематизация, хранение, уточнение, использование, удаление и уничтожение. Обработка ведётся с использованием средств автоматизации и без них.</p>
+      </section>
+      <section>
+        <h2><span class="num">06</span>Сколько храню</h2>
+        <p>Данные хранятся, пока они нужны для ответа на заявку, консультации или предложения, либо до отзыва вашего согласия. Но не дольше 1 года с вашего последнего обращения, если между нами не заключён договор. После этого я их удаляю.</p>
+      </section>
+      <section>
+        <h2><span class="num">07</span>Кому передаю</h2>
+        <p>Я не передаю ваши данные третьим лицам, кроме случаев, предусмотренных законом.</p>
+      </section>
+      <section>
+        <h2><span class="num">08</span>Ваши права</h2>
+        <p>Вы можете:</p>
+        <ul>
+          <li>узнать, какие ваши данные у меня есть и как я их использую;</li>
+          <li>попросить исправить неточные данные;</li>
+          <li>попросить удалить данные;</li>
+          <li>отозвать согласие на обработку.</li>
+        </ul>
+        <p>Для этого напишите мне на <a href="mailto:daydrneg1974@gmail.com">daydrneg1974@gmail.com</a>. Я отвечу в течение 10 рабочих дней (ст. 14, 20 152-ФЗ).</p>
+        <p>Если вы считаете, что ваши права нарушены, вы можете обратиться в Роскомнадзор или в суд (ст. 17 152-ФЗ).</p>
+      </section>
+      <section>
+        <h2><span class="num">09</span>Изменения политики</h2>
+        <p>Если политика изменится, новая версия появится на этой странице с новой датой публикации.</p>
+        <p>Дата публикации: 14 октября 2026 года.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 Рифкат Муравлев</span>
+      <nav class="footer__links" aria-label="Документы">
+        <a href="privacy.html" aria-current="page">Политика обработки персональных данных</a>
+        <a href="consent.html">Согласие на обработку персональных данных</a>
+        <a href="index.html">На главную</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -6,13 +6,45 @@
   <title>Сайты и приложения для бизнеса — разработка с пониманием продаж</title>
   <meta name="description" content="Сайты-визитки, лендинги и простые веб-приложения для малого бизнеса, экспертов и производителей. 20 лет опыта в продажах FMCG — сайт, который решает бизнес-задачу.">
   <meta name="theme-color" content="#08080a">
+  <link rel="canonical" href="https://murrif.ru/">
+
+  <!-- Превью для мессенджеров и соцсетей -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://murrif.ru/">
+  <meta property="og:title" content="Сайты и приложения для бизнеса — разработка с пониманием продаж">
+  <meta property="og:description" content="Сайты-визитки, лендинги и простые веб-приложения для малого бизнеса, экспертов и производителей. 20 лет опыта в продажах FMCG — сайт, который решает бизнес-задачу.">
+  <meta property="og:image" content="https://murrif.ru/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316161c'/%3E%3Cpath d='M20 24l-8 8 8 8M44 24l8 8-8 8M36 18l-8 28' stroke='%23b9bafc' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 
   <style>
+    /* Шрифты: Onest и JetBrains Mono (лицензия SIL OFL 1.1, см. fonts/OFL-*.txt) */
+    @font-face {
+      font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap;
+      src: url("fonts/jetbrains-mono-cyrillic.woff2") format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    @font-face {
+      font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 600; font-display: swap;
+      src: url("fonts/jetbrains-mono-latin.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: "Onest"; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url("fonts/onest-cyrillic.woff2") format("woff2");
+      unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    @font-face {
+      font-family: "Onest"; font-style: normal; font-weight: 400 700; font-display: swap;
+      src: url("fonts/onest-latin.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     /* ===== Вариант B: продуктовый tech-стиль ===== */
     :root {
       color-scheme: dark;
@@ -462,6 +494,10 @@
     .consent input { margin: 2px 0 0; width: 20px; height: 20px; accent-color: var(--accent); flex: none; cursor: pointer; }
 
     .form__submit { margin-top: 18px; width: 100%; }
+    .consent a, .form__note a { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(185, 186, 252, .4); }
+    .consent a:hover, .form__note a:hover { color: #fff; text-decoration-color: #fff; }
+    .form__note { margin-top: 12px; font-size: 13px; text-align: center; color: var(--ink-muted); }
+    .form__note a { display: inline-block; padding: 12px 0; margin: -12px 0; }
     .form__status { margin-top: 16px; padding: 14px 16px; border-radius: var(--radius-sm); font-size: 15px; display: none; }
     .form__status.is-visible { display: block; }
     .form__status--ok { background: var(--accent-soft); color: #cfd0fe; }
@@ -480,6 +516,7 @@
     .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 16px; }
     .footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink-soft); text-decoration: none; }
     .footer a:hover { color: var(--ink); }
+    .footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; }
 
     /* ===== Появление ===== */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1); }
@@ -1041,13 +1078,15 @@
 
           <label class="consent">
             <input type="checkbox" id="consent" name="consent" required>
-            <span>Согласен на обработку персональных данных для ответа на заявку</span>
+            <span>Даю <a href="consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a></span>
           </label>
 
           <button class="btn btn--light form__submit" type="submit">
             Отправить заявку
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
+
+          <p class="form__note">Подробнее — в <a href="privacy.html" target="_blank" rel="noopener">Политике обработки персональных данных</a></p>
 
           <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
@@ -1059,7 +1098,10 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year">2026</span> Рифкат Муравлев. Сайты и приложения для бизнеса.</span>
-      <a href="#top">Наверх ↑</a>
+      <nav class="footer__links" aria-label="Документы">
+        <a href="privacy.html">Политика обработки персональных данных</a>
+        <a href="#top">Наверх ↑</a>
+      </nav>
     </div>
   </footer>
 
