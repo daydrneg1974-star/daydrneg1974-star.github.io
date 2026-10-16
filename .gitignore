@@ -1,2 +1,4 @@
 _archive/
 .claude/
+.playwright-mcp/
+CLAUDE.md
